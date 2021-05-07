@@ -48,25 +48,19 @@
 
         </section>
 
-        <section class="contacts">
+        <section class="contacts-list">
 
           <ul>
-            <li>
-              <img src="assets/img/avatar_1.jpg" alt="avatar_1">
-              <span>Michele</span>
+            <li 
+              v-for="contact in contacts"
+            >
+              <img 
+                :src="'assets/img/avatar'+ contact.avatar + '.jpg'" 
+                alt="avatar+ 'contact.avatar'"
+              >
+              <span>{{contact.name}}</span>
             </li>
-            <li>
-              <img src="assets/img/avatar_2.jpg" alt="avatar_2">
-              <span>Fabio</span>
-            </li>
-            <li>
-              <img src="assets/img/avatar_3.jpg" alt="avatar_3">
-              <span>Samuele</span>
-            </li>
-            <li>
-              <img src="assets/img/avatar_6.jpg" alt="avatar_6">
-              <span>Luisa</span>
-            </li>
+  
           </ul>
 
         </section>
@@ -80,9 +74,15 @@
     <main class="right">
       
       <header>
+        
         <section class="user">
-          <img src="assets/img/avatar_io.jpg" alt="Utente">
-          <span>Nome Utente</span>
+
+          <img src="assets/img/avatar_1.jpg" alt="Michele">
+          <div class="user-text">
+            <span>Michele</span>
+            <span>Ultimo accesso oggi alle</span>
+          </div>
+          
         </section>
 
         <section class="action">
@@ -94,25 +94,24 @@
       </header>
 
       <section class="box-msg">
-        
-        <ul class="msg sent">
-          <li class="text"> 
-             <span>Hai portato a spasso il cane?</span>
-             <i class="fas fa-chevron-down"></i> 
-          </li>      
-          <li class="text">
-            <span>Ricordati di dargli da mangiare
-            </span>
-            <i class="fas fa-chevron-down"></i> 
-          </li>   
-        </ul>
 
-        <ul class="msg received">
-          <li class="text">
-            <span>Tutto fatto!</span>
-            <i class="fas fa-chevron-down"></i>
-          </li>
-        </ul>
+        <div class="msg sent">
+          <span>Hai portato a spasso il cane?</span>
+          <i class="fas fa-chevron-down"></i> 
+          <span class="text-time">10/01/2020 15:30:55</span>
+        </div>
+
+        <div class="msg sent">
+          <span>Ricordati di dargli da mangiare</span>
+          <i class="fas fa-chevron-down"></i> 
+          <span class="text-time">10/01/2020 15:50:00</span>
+        </div>
+
+        <div class="msg received">
+          <span>Tutto fatto!</span>
+          <i class="fas fa-chevron-down"></i>
+          <span class="text-time">10/01/2020 16:15:22</span>
+        </div>
 
       </section>
 

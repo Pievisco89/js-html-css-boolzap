@@ -40,7 +40,7 @@ body{
 .container .left header{
   height: 70px;
   background-color: rgb(233, 230, 230);
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(216, 214, 214);
 }
 
 .container .left header .user,
@@ -50,7 +50,7 @@ body{
   float: left;
   width: 50%;
   height: 100%;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .container .left header .user img,
@@ -86,7 +86,7 @@ body{
   display: flex;
   align-items: center;
   height: 80px;
-  background-color: rgb(144, 188, 255);
+  background-color: rgb(171, 205, 255);
 }
 
 .container .left main .top i{
@@ -130,9 +130,10 @@ body{
   outline: none;
 }
 
-.container .left .contacts{
+.container .left .contacts-list{
   width: 98%;
   height: calc(100% - 130px);
+  overflow: auto;
   box-shadow: 1px 0 rgba(0, 0, 0, 0.2);
   background-color: rgb(243, 240, 240);
 }
@@ -180,59 +181,67 @@ body{
   background-color: rgb(233, 230, 230);
 }
 
+.container .right header .user .user-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.container .right header .user .user-text span:last-child{
+  font-size: 10px;
+  margin-top: 5px;
+  color: grey;
+}
+
 .container .right .box-msg{
-  position: relative;
   height: calc(100% - 140px);
   border-right: 15px solid white;
   background-image: url("../img/mine.jpg");
+  padding: 80px 40px;
+
 }
 
 .container .right .box-msg .msg{
-  position: absolute;
-  list-style: none;
-}
-
-.container .right .box-msg .msg.sent .text,
-.container .right .box-msg .msg.received .text{
+  position: relative;
   height: 60px;
   min-width: 280px;
-  font-size: 14px;
-  margin: 10px 0;
-  line-height: 60px;
-  padding-left: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  font-size: 15px;
   border-radius: 15px;
 }
 
-.container .right .box-msg .msg.sent .text i,
-.container .right .box-msg .msg.received .text i{
+.container .right .box-msg .msg.sent{
   float: right;
-  cursor: pointer;
-  margin-top: 25px;
-  margin-right: 20px;
-  visibility: hidden;
-}
-
-.container .right .box-msg .msg.sent .text:hover i,
-.container .right .box-msg .msg.received .text:hover i{
-  visibility: visible;
-}
-
-.container .right .box-msg .msg.sent > .text{
+  clear: both;
   background-color: #a5ffa5;
 }
 
-.container .right .box-msg .msg.received > .text{
+.container .right .box-msg .msg.received{
+  float: left;
+  clear: both;
   background-color: white;
 }
 
-.container .right .box-msg .msg.received{
-  top: 40%;
-  left: 10%;
+.container .right .box-msg .msg .text-time{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-size: 9px;
+  color: rgb(136, 132, 132);
 }
 
-.container .right .box-msg .msg.sent{
-  top: 10%;
-  right: 10%;
+.container .right .box-msg .msg i{
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  color: rgb(136, 132, 132);
+  cursor: pointer;
+  display: none;
+}
+
+.container .right .box-msg .msg:hover i{
+  display: block;
 }
 
 /* Footer */
