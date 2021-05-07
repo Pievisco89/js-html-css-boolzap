@@ -1,0 +1,171 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  background-image: 
+    linear-gradient(to bottom,
+    #249688 0px, 
+    #249688 15vh, /* posso usare anche le % invece del vh */
+    #DADBD4 15vh,
+    #DADBD4 100vh
+  );
+}
+
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+}
+
+.container .left,
+.container .right{
+  height: 100%;
+  float: left;
+}
+
+/* Container .left */
+.container .left{
+  width: 35%;
+  background-color: violet;
+}
+
+.container .left header{
+  height: 70px;
+  background-color: rgb(233, 230, 230);
+  border-right: 1px solid black;
+}
+
+.container .left header .user{
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 50%;
+  height: 100%;
+  font-size: 12px;
+}
+
+.container .left header .user img{
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.container .left header .action{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.container .left header .action i{
+  color: grey;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.container .left main{
+  height: calc(100% - 70px);
+  background-color: lightgray;
+}
+
+.container .left main .top{
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(144, 188, 255);
+}
+
+.container .left main .top i{
+  color: rgb(144, 188, 255);
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.container .left main .top .top-text span{
+  font-size: 12px;
+  cursor: pointer;
+  color: grey;
+  text-decoration: underline;
+}
+
+.container .left main .main-input{
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  margin: 5px auto;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: rgb(243, 240, 240);
+}
+
+.container .left main .main-input i{
+  color: grey;
+  font-size: 16px;
+  margin: 0 30px;
+}
+
+.container .left main .main-input input{
+  border: none;
+  width: 80%;
+  padding: 5px;
+  background: transparent;
+  outline: none;
+}
+
+.container .left .contacts{
+  width: 98%;
+  height: calc(100% - 130px);
+  box-shadow: 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(243, 240, 240);
+}
+
+.container .left main ul{
+  list-style: none;
+}
+
+.container .left main ul li{
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.container .left main ul li img{
+  width: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.container .left main ul li span{
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Container right */
+.container .right{
+  width: 65%;
+}
+
+.container .right header,
+.container .right footer{
+  height: 70px;
+  background-color: grey;
+}
+
+.container .right section{
+  height: calc(100% - 140px);
+  background-image: url("../img/mine.jpg");
+}
