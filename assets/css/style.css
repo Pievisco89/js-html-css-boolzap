@@ -43,7 +43,8 @@ body{
   border-right: 1px solid black;
 }
 
-.container .left header .user{
+.container .left header .user,
+.container .right header .user{
   display: flex;
   align-items: center;
   float: left;
@@ -52,13 +53,15 @@ body{
   font-size: 12px;
 }
 
-.container .left header .user img{
+.container .left header .user img,
+.container .right header .user img{
   width: 50px;
   border-radius: 50%;
   margin: 0 10px;
 }
 
-.container .left header .action{
+.container .left header .action,
+.container .right header .action{
   display: flex;
   justify-content: right;
   align-items: center;
@@ -67,7 +70,8 @@ body{
   height: 100%;
 }
 
-.container .left header .action i{
+.container .left header .action i,
+.container .right header .action i{
   color: grey;
   margin-right: 20px;
   cursor: pointer;
@@ -140,7 +144,16 @@ body{
 .container .left main ul li{
   display: flex;
   height: 80px;
+  cursor: pointer;
   border-bottom: 1px solid lightgrey;
+}
+
+.container .left main ul li:hover{
+  background-color: lightgrey;
+}
+
+.container .left main ul li:last-child{
+  border-bottom: none;
 }
 
 .container .left main ul li img{
@@ -161,11 +174,78 @@ body{
 
 .container .right header,
 .container .right footer{
+  display: flex;
+  align-items: center;
   height: 70px;
-  background-color: grey;
+  background-color: rgb(233, 230, 230);
 }
 
-.container .right section{
+.container .right .box-msg{
+  position: relative;
   height: calc(100% - 140px);
+  border-right: 15px solid white;
   background-image: url("../img/mine.jpg");
+}
+
+.container .right .box-msg .msg{
+  position: absolute;
+  list-style: none;
+}
+
+.container .right .box-msg .msg.sent .text,
+.container .right .box-msg .msg.received .text{
+  height: 60px;
+  min-width: 280px;
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 60px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+
+.container .right .box-msg .msg.sent .text i,
+.container .right .box-msg .msg.received .text i{
+  float: right;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-right: 20px;
+  visibility: hidden;
+}
+
+.container .right .box-msg .msg.sent .text:hover i,
+.container .right .box-msg .msg.received .text:hover i{
+  visibility: visible;
+}
+
+.container .right .box-msg .msg.sent > .text{
+  background-color: #a5ffa5;
+}
+
+.container .right .box-msg .msg.received > .text{
+  background-color: white;
+}
+
+.container .right .box-msg .msg.received{
+  top: 40%;
+  left: 10%;
+}
+
+.container .right .box-msg .msg.sent{
+  top: 10%;
+  right: 10%;
+}
+
+/* Footer */
+.container .right footer i{
+  color: grey;
+  font-size: 22px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.container .right footer input{
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 15px 12px;
+  border-radius: 5px; 
 }
