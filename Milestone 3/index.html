@@ -86,7 +86,7 @@
           <img :src="'assets/img/avatar' + contacts[activeUser].avatar +'.jpg'" :alt="contacts[activeUser].name">
           <div class="user-text">
             <span>{{contacts[activeUser].name}}</span>
-            <span>Ultimo accesso oggi alle</span>
+            <span>Ultimo accesso oggi alle {{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}</span>
           </div>
           
         </section>
@@ -123,7 +123,7 @@
         <i class="far fa-smile"></i>
         <input type="text" placeholder="Scrivi un messaggio"
           v-model="messageUser"
-          @keyup.enter="newMessage"
+          @keyup.enter="newMessage()"
         >
         <i class="fas fa-microphone"></i>
       </footer>

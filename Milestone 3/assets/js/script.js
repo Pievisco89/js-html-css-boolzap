@@ -92,7 +92,8 @@ const app = new Vue({
           }
         ],
       },
-    ]
+    ],
+    now:dayjs().format('DD/MM/YYYY HH:mm:ss'),
 
   },
   methods:{
@@ -100,29 +101,30 @@ const app = new Vue({
     getMessages(index) {
       this.activeUser = index; //activeUser cambia valore in base all'utente cliccato
     },
-    newMessage() {
-      this.contacts.forEach((contact) => {
-        if (contact.visible === true) {
-          contact.messages.push(
-            {
-              date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-              text: this.messageUser,
-              status: 'sent'
-            }
-          );
-          this.messageUser = '';
-          setTimeout(() => {
-            contact.messages.push(
-              {
-                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                text: 'Ok!',
-                status: 'received'
-              }
-            );
-          }, 1000);
+
+    //funzione per aggiungere messaggio inviato dall'input e per la risposta automatica 
+    newMessage(){
+      this.contacts[this.activeUser].messages.push(
+        {
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          text: this.messageUser,
+          status: 'sent'
         }
-      });
+      );
+      this.messageUser = '';
+      setTimeout(() => {
+        this.contacts[this.activeUser].messages.push(
+          {
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+            text: 'Ok!',
+            status: 'received'
+          }
+        );
+      }, 1000);
     },
-  }
+
+
+
+  },
 
 });
