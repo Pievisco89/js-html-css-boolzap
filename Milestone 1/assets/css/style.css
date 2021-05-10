@@ -65,9 +65,8 @@ Container .left
 .container .left header .action,
 .container .right header .action{
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
-  float: left;
   width: 50%;
   height: 100%;
 }
@@ -75,7 +74,7 @@ Container .left
 .container .left header .action i,
 .container .right header .action i{
   color: grey;
-  margin-right: 20px;
+  margin-right: 25px;
   cursor: pointer;
 }
 
@@ -201,9 +200,9 @@ Container right
 /* container right box-msg */
 .container .right .box-msg{
   height: calc(100% - 140px);
-  border-right: 15px solid white;
+  border-right: 10px solid white;
   background-image: url("../img/mine.jpg");
-  padding: 80px 40px;
+  padding: 5% 10%;
   overflow: auto;
 }
 

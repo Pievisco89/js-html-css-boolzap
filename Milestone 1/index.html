@@ -19,8 +19,10 @@
 
       <header>
         <section class="user">
-          <img src="assets/img/avatar_io.jpg" alt="Utente">
-          <span>Nome Utente</span>
+          <img 
+            :src="'assets/img/avatar'+ user.avatar +'.jpg' " :alt="user.name"
+          >
+          <span>{{user.name}}</span>
         </section>
 
         <section class="action">
