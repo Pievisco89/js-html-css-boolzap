@@ -2,10 +2,10 @@ const app = new Vue({
 
   el:'#app',
   data:{
+    activeUser: 0,
     user: {
       name: 'Nome Utente',
-      avatar: '_io',
-      activeUser: 0
+      avatar: '_io'
     },
     contacts: [
       {
@@ -97,10 +97,7 @@ const app = new Vue({
   methods:{
     //funzione per far apparire le chat per ogni utente
     getMessages(index) {
-      this.contacts.forEach((contact) => {
-        contact.visible = false
-      });
-      this.contacts[index].visible = true;
+      this.activeUser = index; //activeUser cambia valore in base all'utente cliccato
     }
   }
 

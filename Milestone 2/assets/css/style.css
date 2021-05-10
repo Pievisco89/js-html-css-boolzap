@@ -31,6 +31,11 @@ body{
   float: left;
 }
 
+/* Classi generali */
+.active{
+  background-color: lightgrey;
+}
+
 /* 
 Container .left 
 */

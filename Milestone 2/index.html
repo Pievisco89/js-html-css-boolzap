@@ -56,6 +56,7 @@
             <li
               v-for="(contact, index) in contacts"
               @click="getMessages(index)"
+              :class="(activeUser === index) ? 'active' : null"
             >
               <img 
                 :src="'assets/img/avatar' + contact.avatar + '.jpg'"
@@ -77,13 +78,10 @@
       
       <header>
 
-        <section class="user"
-          v-for="(contact, index) in contacts"
-          v-if="(contact.visible)"
-        >
-          <img :src="'assets/img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
+        <section class="user">
+          <img :src="'assets/img/avatar' + contacts[activeUser].avatar +'.jpg'" :alt="contacts[activeUser].name">
           <div class="user-text">
-            <span>{{contact.name}}</span>
+            <span>{{contacts[activeUser].name}}</span>
             <span>Ultimo accesso oggi alle</span>
           </div>
           
@@ -100,13 +98,11 @@
       <section class="box-msg">
 
         <!-- usto template per componenti dinamici -->
-        <template 
-          v-for="(contact, index) in contacts"
-        >
+        <template>
+
           <div 
             class="msg"
-            v-for="message in contact.messages"
-            v-if="contact.visible"
+            v-for="message in contacts[activeUser].messages"
             :class="message.status"  
           >
             <span>{{message.text}}</span>
