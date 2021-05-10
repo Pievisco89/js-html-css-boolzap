@@ -56,12 +56,16 @@
             <li
               v-for="(contact, index) in contacts"
               @click="getMessages(index)"
-              :class="(activeUser === index) ? 'active' : null"
+              :class="(index === activeUser) ? 'active' : null"
             >
               <img 
                 :src="'assets/img/avatar' + contact.avatar + '.jpg'"
               >
+            
               <span>{{contact.name}}</span>
+              <span class="user-text">{{contact.messages[contact.messages.length - 1].text}}</span>
+              <span class="user-date">{{contact.messages[contact.messages.length - 1].date}}</span>
+              
             </li>
   
           </ul>
@@ -117,7 +121,10 @@
 
       <footer>
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
+        <input type="text" placeholder="Scrivi un messaggio"
+          v-model="messageUser"
+          @keyup.enter="newMessage"
+        >
         <i class="fas fa-microphone"></i>
       </footer>
       
@@ -125,6 +132,7 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
