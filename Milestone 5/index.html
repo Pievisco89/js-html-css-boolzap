@@ -92,8 +92,7 @@
           <img :src="'assets/img/avatar' + contacts[activeUser].avatar +'.jpg'" :alt="contacts[activeUser].name">
           <div class="user-text">
             <span>{{contacts[activeUser].name}}</span>
-            <!-- <span>Ultimo accesso oggi alle {{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}</span> -->
-            <span>Ultimo accesso oggi alle {{timeMessage}}</span>
+            <span>Ultimo accesso oggi alle {{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}</span>
           </div>
           
         </section>
@@ -113,7 +112,7 @@
 
           <div 
             class="msg"
-            v-for="message in contacts[activeUser].messages"
+            v-for="(message, index) in contacts[activeUser].messages"
             :class="message.status"  
           >
             <span>{{message.text}}</span>
@@ -121,7 +120,9 @@
             <span class="text-time">{{message.date}}</span>
             <div class="delete-msg">
               <span>Message Info</span>
-              <span>Delete Message</span>
+              <span
+                @click="deleteMessage(index)"
+              >Delete Message</span>
             </div>
           </div>
 
