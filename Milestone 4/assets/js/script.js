@@ -4,6 +4,7 @@ const app = new Vue({
   data:{
     activeUser: 0,
     messageUser: '',
+    search: '',
     user: {
       name: 'Nome Utente',
       avatar: '_io'
@@ -92,7 +93,7 @@ const app = new Vue({
           }
         ],
       },
-    ],
+    ]
 
   },
   methods:{
@@ -122,8 +123,15 @@ const app = new Vue({
       }, 1000);
     },
 
-
-
+    //funzione per filtrare contatti => visualizzo solo contatti che contengono le lettere inserite nell'input
+    filteredContacts(search){
+      this.contacts.forEach((contact) => {
+          if(contact.name.toLowerCase().includes(search.toLowerCase())){
+              contact.visible = true;
+          }else{
+              contact.visible = false;
+          }
+      });
+    }
   },
-
 });
