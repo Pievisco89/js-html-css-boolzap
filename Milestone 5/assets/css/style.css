@@ -1,0 +1,323 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  background-image: 
+    linear-gradient(to bottom,
+    #249688 0px, 
+    #249688 15vh, /* posso usare anche le % invece del vh */
+    #DADBD4 15vh,
+    #DADBD4 100vh
+  );
+}
+
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+}
+
+.container .left,
+.container .right{
+  height: 100%;
+  float: left;
+}
+
+/* Classi generali */
+.active{
+  background-color: lightgrey;
+}
+
+.visible{
+  display: block;
+}
+
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* 
+Container .left 
+*/
+.container .left{
+  width: 35%;
+}
+
+/* container left header */
+.container .left header{
+  height: 70px;
+  background-color: rgb(233, 230, 230);
+  border-right: 1px solid rgb(216, 214, 214);
+}
+
+.container .left header .user,
+.container .right header .user{
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 50%;
+  height: 100%;
+  font-size: 16px;
+}
+
+.container .left header .user img,
+.container .right header .user img{
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.container .left header .action,
+.container .right header .action{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.container .left header .action i,
+.container .right header .action i{
+  color: grey;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+/* container left main */
+.container .left main{
+  height: calc(100% - 70px);
+  background-color: #ececec;
+}
+
+.container .left main .top{
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(146, 190, 255);
+}
+
+.container .left main .top i{
+  color: rgb(144, 188, 255);
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.container .left main .top .top-text span{
+  font-size: 12px;
+  cursor: pointer;
+  color: grey;
+  text-decoration: underline;
+}
+
+.container .left main .main-input{
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  margin: 5px auto;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: rgb(243, 240, 240);
+}
+
+.container .left main .main-input i{
+  color: grey;
+  font-size: 16px;
+  margin: 0 30px;
+}
+
+.container .left main .main-input input{
+  border: none;
+  width: 80%;
+  padding: 5px;
+  background: transparent;
+  outline: none;
+}
+
+.container .left .contacts-list{
+  width: 98%;
+  height: calc(100% - 130px);
+  overflow: auto;
+  box-shadow: 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(243, 240, 240);
+}
+
+.container .left main ul{
+  list-style: none;
+}
+
+.container .left main ul li{
+  position: relative;
+  display: flex;
+  height: 80px;
+  cursor: pointer;
+  border-bottom: 1px solid lightgrey;
+}
+
+.container .left main ul li:hover{
+  background-color: lightgrey;
+}
+
+.container .left main ul li:last-child{
+  border-bottom: none;
+}
+
+.container .left main ul li img{
+  width: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.container .left main ul li span{
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.container .left main ul li span.user-text,
+.container .left main ul li span.user-date{
+  color: rgb(141, 135, 135);
+}
+
+.container .left main ul li span.user-text{
+  position: absolute;
+  top: 33%;
+  left: 19%;
+  width: 25%;
+  font-size: 12px;
+}
+
+.container .left main ul li span.user-date{
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 10px;
+}
+
+/* 
+Container right 
+*/
+.container .right{
+  width: 65%;
+}
+
+/* container right header */
+.container .right header,
+.container .right footer{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(233, 230, 230);
+}
+
+.container .right header .user .user-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.container .right header .user .user-text span:last-child{
+  font-size: 10px;
+  margin-top: 5px;
+  color: grey;
+}
+
+/* container right box-msg */
+.container .right .box-msg{
+  height: calc(100% - 140px);
+  border-right: 10px solid white;
+  background-image: url("../img/mine.jpg");
+  padding: 5% 10%;
+  overflow: auto;
+}
+
+.container .right .box-msg .msg{
+  position: relative;
+  height: 60px;
+  min-width: 280px;
+  max-width: 450px;
+  margin-bottom: 15px;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.container .right .box-msg .msg .delete-msg{
+  position: absolute;
+  left: 40%;
+  bottom: 100%;
+  text-align: center;
+  width: 150px;
+  height: 200px;
+  background-color: rgb(109, 84, 84);
+  color: black;
+  border-radius: 5px;
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+  
+}
+
+.container .right .box-msg .msg .delete-msg span{
+  margin: 5px;
+  cursor: pointer;
+}
+
+.container .right .box-msg .msg.sent{
+  float: right;
+  clear: both;
+  background-color: #a5ffa5;
+}
+
+.container .right .box-msg .msg.received{
+  float: left;
+  clear: both;
+  background-color: white;
+}
+
+.container .right .box-msg .msg .text-time{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-size: 9px;
+  color: rgb(136, 132, 132);
+}
+
+.container .right .box-msg .msg i{
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  color: rgb(136, 132, 132);
+  cursor: pointer;
+  display: none;
+}
+
+.container .right .box-msg .msg:hover i{
+  display: block;
+}
+
+/* Footer */
+.container .right footer i{
+  color: grey;
+  font-size: 22px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.container .right footer input{
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 15px 12px;
+  border-radius: 5px; 
+}
