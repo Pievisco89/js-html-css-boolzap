@@ -42,7 +42,6 @@ body{
   white-space: nowrap;
 }
 
-
 /* 
 Container .left 
 */
@@ -241,9 +240,9 @@ Container right
 
 .container .right .box-msg .msg{
   position: relative;
-  height: 60px;
-  min-width: 280px;
-  max-width: 450px;
+  min-height: 60px;
+  min-width: 45%;
+  max-width: 50%;
   margin-bottom: 15px;
   padding: 20px;
   font-size: 15px;
@@ -254,10 +253,10 @@ Container right
   position: absolute;
   left: 40%;
   top: 70%;
-  /* display: none; */
+  display: none;
   text-align: center;
   padding: 10px;
-  width: 150px;
+  width: 60%;
   background-color: rgb(250, 245, 245);
   color: rgb(131, 128, 128);
   border-radius: 5px;
@@ -291,18 +290,24 @@ Container right
   background-color: white;
 }
 
+.container .right .box-msg .msg .message-text{
+  word-wrap: break-word;
+  margin-right: 5px;
+}
+
 .container .right .box-msg .msg .text-time{
   position: absolute;
   bottom: 10%;
   right: 5%;
   font-size: 9px;
   color: rgb(136, 132, 132);
+  clear: both;
 }
 
 .container .right .box-msg .msg i{
   position: absolute;
   top: 50%;
-  right: 8%;
+  right: 5%;
   transform: translateY(-50%);
   color: rgb(136, 132, 132);
   cursor: pointer;
