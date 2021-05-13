@@ -180,6 +180,17 @@ const app = new Vue({
     //funzione per cancellare messaggio 
     deleteMessage(index){
       this.contacts[this.activeUser].messages.splice(index, 1); 
+      
+      if(this.contacts[this.activeUser].messages.length === 0){
+        this.contacts[this.activeUser].messages = [
+          {
+            date: '',
+            text: '',
+            status: '',
+            delete: ''
+          }
+        ]
+      };
     }
 
   },
